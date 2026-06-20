@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .block {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .paragraph {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .red-color {
+        color: red;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <nav class="block">
+        <p class="paragraph">This is a simple paragraph in the navigation bar.</p>
+    </nav>
+    <div class="block">
+        <h4>My name is <span id="username">Narendra Saraf</span></h4>
+        <p class="paragraph">This is a simple paragraph in the main content area.</p>
+        <pre><code>console.log("Hello, World!");</code></pre>
+    </div>
+    <button onclick="changeName()">Change name</button>
+    <div id="my-container"></div>
+
+    <button id="clickButton">Click Me</button>
+
+    <script>
+        const button = document.getElementById("clickButton");
+        const container = document.getElementById("my-container");
+
+        button.addEventListener("click", () => {
+            const newHeading = document.createElement("h1");
+            newHeading.innerText = "Narendra Saraf";
+            container.appendChild(newHeading);
+        });
+    </script>
+    <script>
+        // alert("Hey Im here to help you with DOM");
+        // // prompt("What is your name?");
+        // const name=prompt("What is your name?","Narendra Saraf");
+        // alert("Hello, " + name + "!");
+        // document.write("<h1>Hello, " + name + "!</h1>");
+
+
+        // const body = document.querySelector("body");
+        // body.innerHTML = "<h1>Hacked</h1>";
+
+        // const username = document.querySelector("#username");
+        // username.innerHTML = "<h3>MERN Stack Developer</h3>";
+
+        const el = document.getElementById("username");
+        el.innerText = "Jhon Doe";
+        el.classList.add("red-color", "underline");
+        console.log(el.classList);
+        const changeName = () => {
+            const newName = prompt("Enter your new name:");
+            if (newName) {
+                el.innerText = newName;
+            }
+            alert("Name changed to: " + newName);
+        };
+    </script>
+</body>
+
+</html>
