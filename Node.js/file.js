@@ -22,3 +22,8 @@ fs.readFile('./contacts.txt','utf-8', (err,result)=> {
 })
 
 fs.appendFileSync('test.txt', `${Date.now()}hey there\n `);
+const os=require('os');
+console.log(os.platform());
+console.log(os.arch());
+console.log(os.cpus());
+console.log(os.cpus().length);
