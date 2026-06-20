@@ -1,0 +1,12 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "learning nodejs and expressjs",
+  "main": "1_Hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node 1_Hello.js"
+  },
+  "author": "narendra saraf",
+  "license": "ISC"
+}
