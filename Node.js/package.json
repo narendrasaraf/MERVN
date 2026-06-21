@@ -5,8 +5,15 @@
   "main": "1_Hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node 1_Hello.js"
+    "start": "nodemon 1_Hello.js"
   },
   "author": "narendra saraf",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.7.1",
+    "moongoose": "^0.0.5",
+    "nodemon": "^3.1.14",
+    "url": "^0.11.4"
+  }
 }

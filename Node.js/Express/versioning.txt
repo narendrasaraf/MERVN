@@ -1,0 +1,8 @@
+Express version ---------> 5.2.1
+
+1st part -5 -----> Major/Breaking Update --> it breaks existing code
+2nd part -2 -----> Recommanded Security Bug Fix / New Feature 
+3rd part -1 -----> minor fix (optional update)
+
+
+^5.2.1 ------> ^ means compatible with currunt node autoupdates till > 5.99.99 (if came) not major relaes update recommanded
