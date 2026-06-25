@@ -1,4 +1,3 @@
-const { v4: uuidv4 } = require("uuid");
 const User = require("../models/user");
 const { setUser } = require("../services/auth");
 
@@ -22,9 +21,11 @@ async function handleUserLogin(req, res) {
         });
     }
 
-    const sessionId = uuidv4();
-    setUser(sessionId, user);
-    res.cookie("uid", sessionId);
+    // 1. Generate the token by passing the user object to setUser
+    const token = setUser(user);
+    
+    // 2. Store the JWT token in the cookies (using "token" as the cookie name)
+    res.cookie("token", token);
     
     return res.redirect("/");
 }

@@ -1,10 +1,13 @@
 const { getUser } = require("../services/auth");
 
 async function restrictToLoggedinUserOnly(req, res, next) {
-    const userUid = req.cookies?.uid;
+    // 1. Read 'token' instead of 'uid'
+    const userUid = req.cookies?.token; 
 
     if (!userUid) return res.redirect("/login");
-    const user = getUser(userUid);
+    
+    // 2. getUser now decodes the JWT instead of looking it up in a Map
+    const user = getUser(userUid); 
 
     if (!user) return res.redirect("/login");
 
@@ -13,8 +16,11 @@ async function restrictToLoggedinUserOnly(req, res, next) {
 }
 
 async function checkAuth(req, res, next) {
-    const userUid = req.cookies?.uid;
-    const user = getUser(userUid);
+    // 1. Read 'token' instead of 'uid'
+    const userUid = req.cookies?.token;
+    
+    // 2. Decodes JWT token
+    const user = getUser(userUid); 
 
     req.user = user;
     next();
