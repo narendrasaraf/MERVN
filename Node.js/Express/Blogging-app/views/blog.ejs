@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('./partials/head.ejs') %>
+  <title><%= blog.title %> | Bloggify</title>
+</head>
+<body class="bg-light">
+  <%- include('./partials/nav.ejs') %>
+
+  <div class="container py-5" style="max-width: 900px;">
+    <article class="card shadow-sm border-0 rounded-4 overflow-hidden">
+      <img src="<%= blog.coverImageURL || '/images/default.png' %>" class="img-fluid" alt="<%= blog.title %>">
+      <div class="card-body p-4 p-md-5">
+        <h1 class="fw-bold mb-3"><%= blog.title %></h1>
+        <p class="text-muted mb-4">
+          By <%= blog.createdBy ? blog.createdBy.fullName : 'Unknown author' %>
+        </p>
+        <div class="fs-5 lh-lg text-break"><%= blog.body %></div>
+      </div>
+    </article>
+  </div>
+
+  <%- include('./partials/scripts.ejs') %>
+</body>
+</html>
